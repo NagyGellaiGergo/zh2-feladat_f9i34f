@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mariadb-zh2:
+    image: mariadb:10.7.8
+    environment:
+      MARIADB_USER: zh2_user
+      MARIADB_PASSWORD: ZH2Password111
+      MARIADB_ROOT_PASSWORD: ZH2Password111
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb:/docker-entrypoint-initdb.d:Z
