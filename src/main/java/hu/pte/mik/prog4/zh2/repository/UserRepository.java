@@ -13,6 +13,10 @@ public class UserRepository extends Repository {
 
     private static final Logger LOGGER = Logger.getLogger( UserRepository.class );
 
+    public UserRepository(String login) {
+        super();
+    }
+
     public UserEntity findByUsername(String username) {
         try (Connection conn = this.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT ID, username, password FROM user WHERE username = ?")){
